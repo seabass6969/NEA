@@ -1,0 +1,251 @@
+  <Station xsi:schemaLocation="https://internal.nationalrail.co.uk/xml/XsdSchemas/External/Version4.0/nre-station-v4-0.xsd">
+    <ChangeHistory>
+      <com:ChangedBy>NRE CMS Editor</com:ChangedBy>
+      <com:LastChangedDate>2025-04-28T14:24:27.918Z</com:LastChangedDate>
+    </ChangeHistory>
+    <CrsCode>ABW</CrsCode>
+    <AlternativeIdentifiers>
+      <NationalLocationCode>513100</NationalLocationCode>
+    </AlternativeIdentifiers>
+    <Name>Abbey Wood</Name>
+    <SixteenCharacterName>ABBEY WOOD.</SixteenCharacterName>
+    <Address>
+      <com:PostalAddress>
+        <add:A_5LineAddress>
+          <add:Line>Abbey Wood station</add:Line>
+          <add:Line>Wilton Road</add:Line>
+          <add:Line>Abbey Wood</add:Line>
+          <add:Line>Greater London</add:Line>
+          <add:PostCode>SE2 9RH</add:PostCode>
+        </add:A_5LineAddress>
+      </com:PostalAddress>
+    </Address>
+    <Longitude>0.12032557</Longitude>
+    <Latitude>51.49077059</Latitude>
+    <StationOperator>XR</StationOperator>
+    <Staffing>
+      <StaffingLevel>fullTime</StaffingLevel>
+      <ClosedCircuitTelevision>
+        <Available>true</Available>
+      </ClosedCircuitTelevision>
+    </Staffing>
+    <InformationSystems>
+      <InformationAvailableFromStaff>Yes - from help point</InformationAvailableFromStaff>
+      <InformationAvailableFromStaff>Yes - from ticket office</InformationAvailableFromStaff>
+      <InformationServicesOpen>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Staffed from first train until last</p>]]></com:Note>
+        </com:Annotation>
+      </InformationServicesOpen>
+      <CIS>DepartureScreens</CIS>
+      <CIS>Announcements</CIS>
+      <CustomerHelpPoints>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Visual and audible customer information is available via customer Information Screens (CIS), public announcements (PA) and staff at this station. </p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>true</com:Available>
+      </CustomerHelpPoints>
+    </InformationSystems>
+    <Fares>
+      <TicketOffice>
+        <com:Open>
+          <com:DayAndTimeAvailability>
+            <com:DayTypes>
+              <com:MondayToFriday>true</com:MondayToFriday>
+            </com:DayTypes>
+            <com:OpeningHours>
+              <com:OpenPeriod>
+                <com:StartTime>06:10:00.000</com:StartTime>
+                <com:EndTime>20:05:00.000</com:EndTime>
+              </com:OpenPeriod>
+            </com:OpeningHours>
+          </com:DayAndTimeAvailability>
+          <com:DayAndTimeAvailability>
+            <com:DayTypes>
+              <com:Saturday>true</com:Saturday>
+            </com:DayTypes>
+            <com:OpeningHours>
+              <com:OpenPeriod>
+                <com:StartTime>06:10:00.000</com:StartTime>
+                <com:EndTime>20:05:00.000</com:EndTime>
+              </com:OpenPeriod>
+            </com:OpeningHours>
+          </com:DayAndTimeAvailability>
+          <com:DayAndTimeAvailability>
+            <com:DayTypes>
+              <com:Sunday>true</com:Sunday>
+            </com:DayTypes>
+            <com:OpeningHours>
+              <com:OpenPeriod>
+                <com:StartTime>07:30:00.000</com:StartTime>
+                <com:EndTime>19:30:00.000</com:EndTime>
+              </com:OpenPeriod>
+            </com:OpeningHours>
+          </com:DayAndTimeAvailability>
+        </com:Open>
+      </TicketOffice>
+      <PrepurchaseCollection>
+        <TicketOffice>true</TicketOffice>
+        <TicketMachine>true</TicketMachine>
+      </PrepurchaseCollection>
+      <TicketMachine>
+        <Available>true</Available>
+      </TicketMachine>
+      <OystercardIssued>true</OystercardIssued>
+      <OystercardTopup>
+        <TicketMachine>true</TicketMachine>
+      </OystercardTopup>
+      <UseOystercard>true</UseOystercard>
+      <OysterComments>
+        <com:Note><![CDATA[<p>Oyster cards can only be purchased from ticket machines.</p><p>Top-up only from self-service ticket machine(s)</p><p>Oyster Validators are located on Platform 3&4 next to escalator for passengers changing to/from South Eastern services.</p>]]></com:Note>
+      </OysterComments>
+      <AlwaysShowOysterCardFields>true</AlwaysShowOysterCardFields>
+      <SmartcardIssued>false</SmartcardIssued>
+      <SmartcardValidator>false</SmartcardValidator>
+      <SmartcardComments>
+        <com:Note><![CDATA[<p>Travelling with Contactless is available.</p>]]></com:Note>
+      </SmartcardComments>
+      <Travelcard>
+        <com:TravelcardZone>Zone 4</com:TravelcardZone>
+      </Travelcard>
+      <PenaltyFares>
+        <TrainOperator>SE</TrainOperator>
+      </PenaltyFares>
+    </Fares>
+    <PassengerServices>
+      <CustomerService>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Please call our Customer Services Centre on 0343 222 1234 (Service and network charges may apply. Click <a href="https://tfl.gov.uk/corporate/terms-and-conditions/?cid=terms" title="">here</a> for details)</p>]]></com:Note>
+        </com:Annotation>
+      </CustomerService>
+      <LeftLuggage>
+        <com:ContactDetails>
+          <com:Url>https://www.nationalrail.co.uk/</com:Url>
+        </com:ContactDetails>
+        <com:Available>false</com:Available>
+      </LeftLuggage>
+      <LostProperty>
+        <com:ContactDetails>
+          <com:Url>https://tfl.gov.uk/help-and-contact/lost-property</com:Url>
+        </com:ContactDetails>
+        <com:Available>true</com:Available>
+        <com:OperatorName>&lt;a href="https://tfl.gov.uk/help-and-contact/lost-property"&gt;TfL Lost property&lt;/a&gt;</com:OperatorName>
+      </LostProperty>
+    </PassengerServices>
+    <StationFacilities>
+      <SeatedArea>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Upper station entrance - Multiple seating areas around the concourse, partially covered.</p><p>Upper ticket hall - Seating Area located past the paid side of gateline</p><p>Platform 1&2 - Multiple seats available covered under canopy.</p><p>Platform 3&4 - Multiple seats available covered under canopy.</p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>true</com:Available>
+      </SeatedArea>
+      <WaitingRoom>
+        <com:Available>false</com:Available>
+      </WaitingRoom>
+      <StationBuffet>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Coffee and confectionary</p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>true</com:Available>
+      </StationBuffet>
+      <Toilets>
+        <com:Available>true</com:Available>
+        <com:Location>
+          <com:Note><![CDATA[<ul><li>On the paid side of the barrier within the stations ticket hall.</li><li>Separate baby change facilities are also available within the ticket hall on the paid side of the barrier.</li></ul>]]></com:Note>
+        </com:Location>
+      </Toilets>
+      <BabyChange>
+        <com:Available>true</com:Available>
+      </BabyChange>
+      <Telephones>
+        <com:Exists>false</com:Exists>
+      </Telephones>
+      <WiFi>
+        <com:Annotation>
+          <com:Note><![CDATA[<p><a href="https://www.btwifi.co.uk/find/?search=SE2+9RH" title="">Find WiFi Hotspots around Abbey Wood station</a></p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>false</com:Available>
+      </WiFi>
+    </StationFacilities>
+    <Accessibility>
+      <Helpline>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>We want everyone to travel with confidence. That is why, if you are planning on travelling on national rail services, you can request an assistance booking in advance - now up to 2 hours before your journey is due to start, any time of the day. For more information about Passenger Assist and how to request an assistance booking via Passenger Assist, please <a href="https://www.nationalrail.co.uk/stations_destinations/passenger-assist.aspx" title="">click here</a>.</p><p>We operate Turn Up and Go and pre-booked assistance at this station. Please speak to a member of staff for any assistance.</p>]]></com:Note>
+        </com:Annotation>
+        <com:ContactDetails>
+          <com:Annotation>
+            <com:Note><![CDATA[<p>0343 222 1234</p>]]></com:Note>
+          </com:Annotation>
+          <com:Url>https://www.nationalrail.co.uk/</com:Url>
+        </com:ContactDetails>
+      </Helpline>
+      <StaffHelpAvailable>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Staff are available to assist from the first to last train.</p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>true</com:Available>
+      </StaffHelpAvailable>
+      <InductionLoop>true</InductionLoop>
+      <AccessibleTicketMachines>
+        <com:Available>true</com:Available>
+      </AccessibleTicketMachines>
+      <HeightAdjustedTicketOfficeCounter>
+        <com:Available>true</com:Available>
+      </HeightAdjustedTicketOfficeCounter>
+      <RampForTrainAccess>
+        <com:Available>true</com:Available>
+      </RampForTrainAccess>
+      <AccessibleTaxis>
+        <com:Available>false</com:Available>
+      </AccessibleTaxis>
+      <NationalKeyToilets>
+        <com:Available>true</com:Available>
+        <com:Location>
+          <com:Note><![CDATA[<p>Accessible toilet is located on the paid side of the barrier in the stations ticket hall. This toilet is operated with a radar key.</p>]]></com:Note>
+        </com:Location>
+      </NationalKeyToilets>
+      <StepFreeAccess>
+        <com:Annotation>
+          <com:Note><![CDATA[<ul><li>Accessibility Category A. This station has step-free access to all platforms.</li><li>Staff ramp assistance is always available.</li><li>Accessible seating is available in the ticket hall and platforms.</li><li>Wheelchairs available from first to last train.</li></ul>]]></com:Note>
+        </com:Annotation>
+        <Coverage>wholeStation</Coverage>
+      </StepFreeAccess>
+      <TicketGates>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Abbey Wood has a Secure Station accreditation.</p>]]></com:Note>
+        </com:Annotation>
+        <com:Available>true</com:Available>
+      </TicketGates>
+      <ImpairedMobilitySetDown>
+        <com:Available>false</com:Available>
+      </ImpairedMobilitySetDown>
+      <WheelchairsAvailable>
+        <com:Available>true</com:Available>
+      </WheelchairsAvailable>
+    </Accessibility>
+    <Interchange>
+      <CycleStorage>
+        <Spaces>0</Spaces>
+        <Sheltered>No</Sheltered>
+        <Cctv>false</Cctv>
+      </CycleStorage>
+      <RailReplacementServices>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Towards Dartford - Bus stop D </p><p>Towards Plumstead - Bus stop C </p>]]></com:Note>
+        </com:Annotation>
+      </RailReplacementServices>
+      <OnwardTravel>
+        <com:Annotation>
+          <com:Note><![CDATA[<p><a href="https://tfl.gov.uk/plan-a-journey/" title="">Transport for London</a> Buses operate from outside the station.</p><p>Information to plan your onward journey is available in a printable format <a href="https://assets.nationalrail.co.uk/e8xgegruud3g/9fImcgSMMGBtjK2zKl64V/2ce690d0b2e8cc771d0c4146bada909a/Abbey_Wood_EL.pdf" title="">here.</a></p>]]></com:Note>
+        </com:Annotation>
+      </OnwardTravel>
+      <Airport>
+        <com:Annotation>
+          <com:Note><![CDATA[<p>Services running to Heathrow Terminal 2&3, 4 and 5 running from this station via Elizabeth Line.</p>]]></com:Note>
+        </com:Annotation>
+      </Airport>
+    </Interchange>
+    <TrainOperatingCompanies>
+      <TocRef>SE</TocRef>
+    </TrainOperatingCompanies>
+  </Station
