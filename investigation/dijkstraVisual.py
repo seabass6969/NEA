@@ -209,7 +209,6 @@ def dijkstraVisualisation(
     with open("finalMarkdown.md", "w") as file:
         file.write(outputMarkdownText)
         print("saved")
-        file.close()
     subprocess.Popen("pandoc -f gfm -t docx finalMarkdown.md --resource-path=assets -o final.docx", shell=True)
     print("converted")
         

@@ -1,4 +1,5 @@
 import pygame
+from circle import Vertex
 
 
 class Line:
@@ -36,7 +37,8 @@ class Line:
 
     def draw(self):
         pygame.draw.line(self.screen, self.colour, self.startPos, self.endPos, 3)
-        self.screen.blit(self.textObj, self.textCenterLocation)
+        if self.text != 0:
+            self.screen.blit(self.textObj, self.textCenterLocation)
 
     def updateStartLocation(self, newLocation: tuple[int, int]):
         self.startPos = newLocation
@@ -69,6 +71,7 @@ class Line:
 
     def updateColour(self, newColour):
         self.colour = newColour
+
     def __str__(self):
         return str(
             {
@@ -87,4 +90,67 @@ class Line:
             "centerLocation": self.centerLocation,
             "value": int(self.text),
             "connection": self.connection,
+        }
+
+
+class RouteLine:
+    def __init__(
+        self,
+        screen: pygame.Surface,
+        lineName: str,
+        lineColour: pygame.Color = "orange",
+        textColour: pygame.Color = "black",
+    ):
+        self.screen = screen
+        self.connections = []
+        self.drawableLines = []
+        self.lineName = lineName
+        self.lineColour = lineColour
+        self.textCenterLocations = []
+
+        self.textColour = textColour
+        self.FONT = pygame.font.Font("JetBrainsMono-Regular.ttf", 20)
+        self.textObj = self.FONT.render(self.lineName, True, self.textColour, None)
+        self.textSurface = pygame.Surface(self.textObj.get_size())
+        self.textSurface.fill((220, 220, 220))
+        self.textSurface.blit(self.textObj, self.textObj.get_rect())
+        self.textObj = self.textSurface
+
+    def addConnections(self, connectionA: Vertex, connectionB: Vertex):
+        self.connections.extend([connectionA, connectionB])
+        self.connections = list(set(self.connections))
+        self.drawableLines.append((connectionA, connectionB))
+        centerLocation = (
+            (connectionA.centerLocation[0] + connectionB.centerLocation[0]) / 2,
+            (connectionA.centerLocation[1] + connectionB.centerLocation[1]) / 2,
+        )
+        self.textCenterLocations.append(
+            (
+                centerLocation[0] - self.textObj.get_width() / 2,
+                centerLocation[1] - self.textObj.get_height() / 2,
+            )
+        )
+
+    def draw(self):
+        for line in self.drawableLines:
+            pygame.draw.line(
+                self.screen,
+                self.lineColour,
+                line[0].centerLocation,
+                line[1].centerLocation,
+                3,
+            )
+        for centertextlocation in self.textCenterLocations:
+            self.screen.blit(self.textObj, centertextlocation)
+            
+
+    def selfExportDetail(self):
+        return {
+            "connections": [connection.text for connection in self.connections],
+            "drawableLines": [
+                {"connectionA": connectionA.text, "connectionB": connectionB.text}
+                for connectionA, connectionB in self.drawableLines
+            ],
+            "lineName": self.lineName,
+            "lineColour": self.lineColour,
         }
