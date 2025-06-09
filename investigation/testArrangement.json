@@ -1,0 +1,76 @@
+{
+  "objects_list": [
+    { "location": [100, 200], "name": "A" },
+    { "location": [300, 100], "name": "B" },
+    { "location": [700, 200], "name": "C" },
+    { "location": [300, 300], "name": "D" },
+    { "location": [500, 100], "name": "E" },
+    { "location": [500, 300], "name": "F" }
+  ],
+  "lines_list": [
+    {
+      "startPos": [100, 200],
+      "endPos": [300, 100],
+      "centerLocation": [200.0, 150.0],
+      "value": 2,
+      "connection": ["A", "B"]
+    },
+    {
+      "startPos": [100, 200],
+      "endPos": [300, 300],
+      "centerLocation": [200.0, 250.0],
+      "value": 8,
+      "connection": ["A", "D"]
+    },
+    {
+      "startPos": [300, 100],
+      "endPos": [500, 100],
+      "centerLocation": [400.0, 100.0],
+      "value": 6,
+      "connection": ["B", "E"]
+    },
+    {
+      "startPos": [300, 300],
+      "endPos": [300, 100],
+      "centerLocation": [300.0, 200.0],
+      "value": 5,
+      "connection": ["D", "B"]
+    },
+    {
+      "startPos": [300, 300],
+      "endPos": [500, 100],
+      "centerLocation": [400.0, 200.0],
+      "value": 3,
+      "connection": ["D", "E"]
+    },
+    {
+      "startPos": [500, 300],
+      "endPos": [500, 100],
+      "centerLocation": [500.0, 200.0],
+      "value": 1,
+      "connection": ["F", "E"]
+    },
+    {
+      "startPos": [300, 300],
+      "endPos": [500, 300],
+      "centerLocation": [400.0, 300.0],
+      "value": 2,
+      "connection": ["D", "F"]
+    },
+    {
+      "startPos": [700, 200],
+      "endPos": [500, 300],
+      "centerLocation": [600.0, 250.0],
+      "value": 3,
+      "connection": ["C", "F"]
+    },
+    {
+      "startPos": [500, 100],
+      "endPos": [700, 200],
+      "centerLocation": [600.0, 150.0],
+      "value": 9,
+      "connection": ["E", "C"]
+    }
+  ]
+}
+
