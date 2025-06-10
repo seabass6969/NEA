@@ -5,7 +5,7 @@
     { "location": [500, 100], "name": "C" },
     { "location": [700, 100], "name": "D" },
     { "location": [900, 100], "name": "E" },
-    { "location": [300, 300], "name": "F" },
+    { "location": [100, 300], "name": "F" },
     { "location": [900, 300], "name": "G" }
   ],
   "route_list": [
@@ -23,9 +23,9 @@
     },
     {
       "line_name": "t1",
-      "connections": ["F", "E", "G", "B"],
+      "connections": ["F", "E", "G", "A"],
       "drawableLines": [
-        { "connectionA": "B", "connectionB": "F" },
+        { "connectionA": "A", "connectionB": "F" },
         { "connectionA": "F", "connectionB": "G" },
         { "connectionA": "G", "connectionB": "E" }
       ],
@@ -36,7 +36,7 @@
   "timetable": [
     {
       "trip": "t0",
-      "schedules": [
+      "stopped_time": [
         { "stop": "A", "time": "10:00" },
         { "stop": "B", "time": "10:20" },
         { "stop": "C", "time": "10:40" },
@@ -46,8 +46,8 @@
     },
     {
       "trip": "t1",
-      "schedules": [
-        { "stop": "B", "time": "10:20" },
+      "stopped_time": [
+        { "stop": "A", "time": "10:00" },
         { "stop": "F", "time": "10:10" },
         { "stop": "G", "time": "10:20" },
         { "stop": "E", "time": "10:30" }

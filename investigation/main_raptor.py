@@ -93,7 +93,7 @@ while running:
                         Vertex(screen, objecter["name"], objecter["location"])
                     )
                 for route in routes:
-                    routeLines[route["line_name"]] = RouteLine(screen, route["line_name"], route["lineColour"])
+                    routeLines[route["line_name"]] = RouteLine(screen, route["line_name"], objects,route["lineColour"])
                     for line in route["drawableLines"]:
                         routeLines[route["line_name"]].addConnections(objects[line["connectionA"]], objects[line["connectionB"]])
 
@@ -111,7 +111,7 @@ while running:
             print("joining mode")
             print("new joining line created")
             routeLinesOn += 1
-            routeLines["t{}".format(routeLinesOn)] = RouteLine(screen, "t{}".format(routeLinesOn), random.choice(["red", "orange", "green"]))
+            routeLines["t{}".format(routeLinesOn)] = RouteLine(screen, "t{}".format(routeLinesOn),objects, random.choice(["red", "orange", "green"]))
 
         if event.type == pygame.KEYDOWN and event.key == pygame.K_x:
             if mode == "autoupdate":
@@ -148,7 +148,7 @@ while running:
                         Vertex(screen, objecter["name"], objecter["location"])
                     )
                 for route in routes:
-                    routeLines[route["line_name"]] = RouteLine(screen, route["line_name"], route["lineColour"])
+                    routeLines[route["line_name"]] = RouteLine(screen, route["line_name"], objects, route["lineColour"])
                     for line in route["drawableLines"]:
                         routeLines[route["line_name"]].addConnections(objects[line["connectionA"]], objects[line["connectionB"]])
                 print("Updated")

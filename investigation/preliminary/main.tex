@@ -1,0 +1,37 @@
+\documentclass[preview]{standalone} 
+
+\usepackage{amsmath, amsfonts, amsthm, graphicx, geometry, lipsum, subfigure}
+\usepackage{blindtext}
+
+\usepackage{verbatim, fancyvrb}
+\usepackage{fancyhdr, lastpage}
+\usepackage[Sonny]{fncychap}
+\usepackage{xcolor-material}
+\usepackage[svgnames]{xcolor}
+\usepackage{tikz, tcolorbox}
+\tcbuselibrary{listings,breakable}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\hypersetup {
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=red,
+    citecolor=RoyalBlue
+}
+\begin{document}
+\begin{tabular}{c|c}
+    $\Pi$ & period of operation (think of it as the seconds of a day)\\
+    $\mathcal{S}$ & Set of stops\\
+    $\mathcal{T}$ & Set of trips (Services) i.e. the bus operate two service, one at 1800 and one at 1900\\
+    $\mathcal{R}$ & Set of routes\\
+    $\mathcal{F}$ & Set of transfers (or footpaths)\\
+    $(\Pi, \mathcal{S}, \mathcal{T}, \mathcal{R}, \mathcal{F})$ & timetable \\
+    $p_s \in \mathcal{S}$ & source stop \\
+    $\tau \in \Pi$ & The departure time \\
+    $p_t$ & target stop \\
+    $\tau_i(p)$ & represent the earliest known arrival time at p with up to $i$ trips \\
+    % $$ &  \\
+\end{tabular}
+\end{document}
+

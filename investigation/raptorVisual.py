@@ -1,3 +1,5 @@
+import json
+import math
 import subprocess
 
 import os
@@ -53,11 +55,39 @@ def visualised(
 ):
     awaitKey(screen, lines, vertice, clock, start, end)
 
+def timeparser(time: str ):
+    # example 23:04
+    times = [int(i) for i in time.split(":")]
+    return (times[0] * 60 + times[1]) * 60
+
+def footpathsCalculation(vertexA: Vertex, vertexB: Vertex):
+    return int((vertexA.centerLocation[0] - vertexB.centerLocation[0]) ** 2 + (vertexA.centerLocation[1] - vertexB.centerLocation[1]) ** 2)
 
 def raptorVisualisation(
     screen: pygame.Surface, lines: dict[str,RouteLine], vertices: dict[str, Vertex]
 ):
+    file = json.load(open("arrangement_raptor.json"))
+    routeList = file["route_list"]
+    timetablesList = file["timetable"]
+    timetables = {}  
+
+    for timetable in timetablesList:
+        timetables[timetable["trip"]] = timetable
+
+
+    stopsRoute = {}
+    routes = {}
+    for rout in routeList:
+        for connected in rout["connections"]:
+            if connected not in stopsRoute:
+                stopsRoute[connected] = []
+            stopsRoute[connected].append(rout["line_name"])
+        routes[rout["line_name"]] = rout
+
+    print(stopsRoute)
+
     outputMarkdownText = ""
+    startingTime = "10:00"
     start = "A"
     end = "C"
     steps = 1
@@ -65,6 +95,61 @@ def raptorVisualisation(
     clock = pygame.time.Clock()
 
     # Variables that are displaying
+    # τ_k (p) arrival time for k rounds and stop p
+    arrival_time_per_round = {}
+    round_k = 0
+    mark_updated = []
+
+    # initialising data
+    # all the label are initialised to be infinity, in this case None
+    arrival_time_per_round[round_k] = {}    
+    for vertex in vertices.keys():
+        arrival_time_per_round[round_k][vertex] = None
+    arrival_time_per_round[round_k][start] = startingTime
+
+    mark_updated.append(start)
+
+    # rounds start 
+    for _ in range(2):
+        round_k += 1
+        # stage 1: copy previous round 
+        # copy τ_k (p) = τ_{k-1} (p)
+        arrival_time_per_round[round_k] = {}
+        for vertex in vertices.keys():
+            arrival_time_per_round[round_k][vertex] = arrival_time_per_round[round_k - 1][vertex]
+
+        # stage 2: process routes 
+        # search through marked stops
+        # check its route
+        currentRoundMarked = [marked for marked in mark_updated]
+        for marked in currentRoundMarked:
+            for route in stopsRoute[marked]:
+                canWeBoard = False
+                markedStopTime = timeparser(arrival_time_per_round[round_k][marked])
+                for time in timetables[route]["schedules"]:
+                    if time["stop"] == marked:
+                        if timeparser(time["time"]) <= markedStopTime: # unsure is it equal or not equal less then
+                            canWeBoard = True
+                            arrival_time_per_round[round_k][marked] = timeparser(time["time"])
+
+                mark_updated.remove(marked) # unmark p
+                if canWeBoard:
+                    # traverse route onwards
+                    for connectedStop in routes[route]["connections"]:
+                        markedStopTime = timeparser(arrival_time_per_round[round_k][connectedStop])
+                        for time in timetables[route]["schedules"]:
+                            if time["stop"] == connectedStop:
+                                if timeparser(time["time"]) <= markedStopTime: # unsure is it equal or not equal less then
+                                    arrival_time_per_round[round_k][connectedStop] = timeparser(time["time"])
+                                    # mark p 
+                                    # change p's earlist arrival time
+                                    mark_updated.append(connectedStop)
+        
+        # stage 3: footpaths
+        currentRoundMarked = [marked for marked in mark_updated]
+        for marked in currentRoundMarked:
+                    
+    
 
     visualised(screen, lines, vertices, clock, start, end)
         

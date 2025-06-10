@@ -98,12 +98,14 @@ class RouteLine:
         self,
         screen: pygame.Surface,
         lineName: str,
+        stops: dict[str, Vertex],
         lineColour: pygame.Color = "orange",
         textColour: pygame.Color = "black",
     ):
         self.screen = screen
         self.connections = []
         self.drawableLines = []
+        self.stopsList = []
         self.lineName = lineName
         self.lineColour = lineColour
         self.textCenterLocations = []
@@ -115,6 +117,8 @@ class RouteLine:
         self.textSurface.fill((220, 220, 220))
         self.textSurface.blit(self.textObj, self.textObj.get_rect())
         self.textObj = self.textSurface
+
+        self.stops = stops 
 
     def addConnections(self, connectionA: Vertex, connectionB: Vertex):
         self.connections.extend([connectionA, connectionB])
@@ -154,3 +158,4 @@ class RouteLine:
             "lineName": self.lineName,
             "lineColour": self.lineColour,
         }
+    
